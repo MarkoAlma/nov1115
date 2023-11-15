@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <p class="msg"></p>
+    <p id="msg"></p>
+    <script>
+        const username = "Gyula"
+        const telNumber = 123456789
+        const time = "16:30"
+        //sztringek összefűzése:
+        let info = "Nem fogadott hívás, "+time+"-kor, a "+telNumber+" telefonszámról, "+username+" keresett."
+        document.querySelector("p").innerHTML=info
+        info = "Nem fogadott hívás, "+time+"-kor, a "+telNumber+" telefonszámról, <b>"+username+"</b> keresett."
+        document.querySelector(".msg").innerHTML=info
+        //ajánlás szerint:
+        let info2 = `Nem fogadott hívás, ${time}-kor, a ${telNumber} telefonszámról, <b>${username}</b> keresett.`
+        document.querySelector("#msg").innerHTML=info2
+    </script>
+</body>
+</html>

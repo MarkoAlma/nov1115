@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+        ul {
+            width: 300px;
+            margin: 0 auto;
+            padding-right: 40px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .done {
+            text-decoration: line-through;
+        }
+
+        .c {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">ToDo App</h1>
+    <div class="container">
+    <input type="text" id="a" placeholder="Add a new task">
+    <input type="button" value="Add Task" onclick="csin()">
+</div>
+    <ul style="display: flex; flex-direction: column;">
+    </ul>
+    <script>
+        let van
+        function csin () {
+            let szoveg = document.getElementById("a").value
+            document.getElementById("a").value = ""
+            if (!szoveg) {
+                return
+            }
+            document.querySelector("ul").innerHTML+="<li><span onclick='completeTask(this)' class='c'>✅</span><span>"+szoveg+"</span><span  onclick='deleteTask(this)'  class='c'>❌</span></li>"
+        }
+
+        function completeTask (kap) {
+            kap.nextElementSibling.classList.toggle("done")
+        }
+        function deleteTask (tor) {
+            tor.parentElement.remove()
+        }
+    </script>
+</body>
+</html>

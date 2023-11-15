@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            display: block;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Színválasztó</h1>
+    <button onclick="futtat(this)">Red</button>
+    <button onclick="futtat(this)">Green</button>
+    <button onclick="futtat(this)">Blue</button>
+    <script>
+        function futtat(kap) {
+            document.querySelector("body").style.backgroundColor=kap.textContent
+            document.querySelector("body").style.transition="background-color 5s"
+        }
+    </script>
+</body>
+</html>

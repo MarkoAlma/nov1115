@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        //JS objektumok:
+        //hozz létre véletlen számot 1 és 10 között
+        const rand = Math.ceil(Math.random()*10)
+        //hozz létre véletlen számot 10 és 15 között
+        const a = 10
+        const b = 15
+        const rand1 = Math.round(Math.random()*(b-a))+a
+        document.querySelector("p").innerHTML=rand1
+    </script>
+</body>
+</html>

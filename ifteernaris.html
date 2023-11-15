@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let nr=100
+        let result
+        if (nr % 2 == 0) {
+            result="páros"
+        }
+        else {
+            result="páratlan"
+        }
+        result=nr%2==0 ? "páros" : "páratlan"
+        console.log(result)
+        let ran=Math.round(Math.random()*99)+1
+        a = prompt("Adj meg egy számot 1 és 100 között!")
+        console.log(ran)
+        ran==a ? document.querySelector("p").innerHTML="Eltaláltad" : document.querySelector("p").innerHTML="Nem találtad el"
+
+        //hozz létre egy véletlen számot 1 és 100 között
+        //kérd be a felhasználótól a tippet
+        //jelenítsd meg az eredményt, hogy eltalálta-e
+    </script>
+</body>
+</html>

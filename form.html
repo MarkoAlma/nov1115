@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gondoltam egy számra, tippelj!</h1>
+    <p class="msg"></p>
+    <p class="szam"></p>
+    <form action="">
+        <input type="number" id="tipp">
+        <input type="button" value="ellenoriz" onclick="verify()">
+    </form>
+
+    <script>
+        function randomgenerator(min,max){
+            return Math.round(Math.random()*(max-min))+min
+        }
+        // a gép kisorsol egy véletlen számot 1 és 100 között:
+        let veletlen = randomgenerator(1,100)
+        var a = 0
+        //az űrlapelemeknek value attribútuma van:
+        function verify(){
+            a += 1
+            console.log("klikkeltél!!!")
+            //olvassuk ki az input űrlapelem értékét:
+            let tipp =+ document.getElementById("tipp").value
+            console.log(tipp,typeof(tipp))
+            if (tipp == veletlen) {
+                document.querySelector(".msg").innerHTML="Eltaláltad!"
+                a = 0
+            }
+            if (a == 3) {
+                document.querySelector(".msg").classList.toggle("hide")
+                document.querySelector(".szam").classList.toggle("hide")
+                console.log(a)
+                a = 0
+                document.querySelector(".msg").innerHTML="Nem találtad el!"
+                document.querySelector(".szam").innerHTML= "Ez lett volna a kitalálandó szám: "+veletlen
+                veletlen = randomgenerator(1,100)}
+            if (a == 1) {
+                document.querySelector(".msg").classList.toggle("hide")
+                document.querySelector(".szam").classList.toggle("hide")
+            }
+            console.log(a)
+        }
+    </script>
+</body>
+</html>

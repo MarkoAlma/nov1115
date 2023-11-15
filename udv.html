@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        div {
+            display: inline-block;
+            text-align: center;
+            border: 1px black solid;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div contenteditable id="a"></div> <br>
+    <button onclick="csin()">Szerkezd</button>
+    <h3></h3>
+    <script>
+        function csin () {
+            document.querySelector("h3").innerHTML=document.getElementById("a").innerText
+        }
+    </script>
+</body>
+</html>
